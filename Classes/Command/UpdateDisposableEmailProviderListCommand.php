@@ -57,7 +57,7 @@ class UpdateDisposableEmailProviderListCommand extends Command
 
         switch ($extConf['type'])
         {
-            case 'disposal':
+            case 'disposable':
                 $lists = self::ENDPOINT_LISTS;
                 break;
             case 'freemail':
