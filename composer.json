@@ -1,0 +1,29 @@
+{
+	"name": "belsignum/disposable-email",
+	"type": "typo3-cms-extension",
+	"description": "A service extension to compile lists of disposable and free mail providers, offering a simple way to validate email addresses against them.",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Andreas Sommer",
+			"role": "Developer"
+		}
+	],
+	"keywords": [
+		"TYPO3 CMS",
+		"TYPO3 extension",
+		"Disposable Email provider list"
+	],
+	"require": {
+	},
+	"autoload": {
+		"psr-4": {
+			"Belsignum\\DisposableEmail\\": "Classes/"
+		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "disposable_email"
+		}
+	}
+}

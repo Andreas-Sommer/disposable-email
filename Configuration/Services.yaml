@@ -1,0 +1,15 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Belsignum\DisposableEmail\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  Belsignum\DisposableEmail\Command\UpdateDisposableEmailProviderListCommand:
+    tags:
+      - name: console.command
+        command: 'disposable-email:update'
+        description: 'The current list is updated using the remote endpoint, with updates typically provided on a weekly basis.'
