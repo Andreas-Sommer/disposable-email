@@ -1,0 +1,13 @@
+[System.extensionLoaded('news')]
+plugin.tx_powermail {
+	settings.setup {
+    validation {
+      customValidation {
+        791 = Belsignum\DisposableEmail\Validator\DisposableEmailValidator
+      }
+		}
+	}
+  _LOCAL_LANG.default.validationerror_validation.791 = For collaboration with business partners, we kindly ask you to use a valid business email address. Please check the correctness of your email address. Addresses from disposable or free providers cannot be considered.
+  _LOCAL_LANG.de.validationerror_validation.791 = Für die Zusammenarbeit mit Geschäftspartnern bitten wir Sie, eine valide geschäftliche E-Mail-Adresse zu verwenden. Bitte überprüfen Sie die Richtigkeit Ihrer E-Mail. Adressen von Wegwerf- oder kostenlosen Anbietern können nicht berücksichtigt werden.
+}
+[end]
