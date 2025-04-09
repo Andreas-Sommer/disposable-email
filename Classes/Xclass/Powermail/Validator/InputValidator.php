@@ -13,11 +13,11 @@ class InputValidator extends CoreInputValidator
 {
     private DisposableEmailService $disposableEmailService;
 
-    public function isValid($mail): bool
+    public function isValid($mail): void
     {
         // load once DisposableEmailService via factory due to lack of DI
         $this->disposableEmailService = GeneralUtility::makeInstance(DisposableEmailServiceFactory::class)->get();
-        return parent::isValid($mail);
+        parent::isValid($mail);
     }
 
     protected function isValidFieldInStringValidation(Field $field, $value): void
@@ -43,5 +43,4 @@ class InputValidator extends CoreInputValidator
             }
         }
     }
-
 }
