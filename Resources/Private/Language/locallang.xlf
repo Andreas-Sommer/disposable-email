@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2024-04-07T12:00:00Z" product-name="disposable_email">
+		<header/>
+		<body>
+			<trans-unit id="validation.disposable_email.error">
+				<source>For collaboration with business partners, we kindly ask you to use a valid business email address. Addresses from disposable or free providers cannot be considered.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

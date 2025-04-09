@@ -13,3 +13,8 @@ services:
       - name: console.command
         command: 'disposable-email:update'
         description: 'The current list is updated using the remote endpoint, with updates typically provided on a weekly basis.'
+
+  Belsignum\DisposableEmail\Factory\DisposableEmailServiceFactory:
+    public: true
+    autowire: true
+    autoconfigure: true
