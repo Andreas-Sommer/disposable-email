@@ -13,9 +13,13 @@ composer req belsignum/disposable-email
 - Disposable & free email provider
 - Custom lists only
 
-
-
 **basic.customLists - Custom Lists (comma seperated list of public uri)**
+
+**powermail.overloadEmailValidation - Overload Email Validation, else adds additional validation rule**
+
+## Powermail validation rule
+- Disposable Email
+- Or overload Email validation rule - Set extension configuration powermail.overloadEmailValidation=1
 
 ## Update list
 
