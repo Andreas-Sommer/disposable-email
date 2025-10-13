@@ -21,6 +21,10 @@ composer req belsignum/disposable-email
 - Disposable Email
 - Or overload Email validation rule - Set extension configuration powermail.overloadEmailValidation=1
 
+## CMS-Form
+- Validator for E-Mail Field comparing E-Mail Address against lists of disposable and free mail providers
+- Validator for E-Mail Field comparing username or email address in fe_users
+
 ## Update list
 
 ### CLI
