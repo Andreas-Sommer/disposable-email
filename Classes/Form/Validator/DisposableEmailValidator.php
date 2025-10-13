@@ -31,13 +31,13 @@ class DisposableEmailValidator extends AbstractValidator
 
         $disposableEmailService = GeneralUtility::makeInstance(DisposableEmailServiceFactory::class)->get();
         if ($disposableEmailService->checkEmail($value) === true) {
-            $type = (bool)(\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+            $type = (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
                 \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
-            )->get('disposable_email')['overloadEmailValidation']);
+            )->get('disposable_email')['type']);
 
 
             $this->addError(
-                $this->translateErrorMessage('validator.disposableEmail.error', 'disposable_email')
+                $this->translateErrorMessage('validator.disposableEmail.error.' . $type, 'disposable_email')
                 ?: 'For collaboration with business partners, we kindly ask you to use a business email address. Addresses from disposable or free providers cannot be considered.',
                 170000791
             );

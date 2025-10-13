@@ -23,7 +23,7 @@
 				<source>For collaboration with business partners, we kindly ask you to not use addresses from disposable providers.</source>
 				<target>Für die Zusammenarbeit mit Geschäftspartnern bitten wir Sie, keine Einmal-E-Mail-Adresse zu verwenden.</target>
 			</trans-unit>
-			<trans-unit id="validator.disposableEmail.error.custom" resname="validator.disposableEmail.error.custom">
+			<trans-unit id="validator.disposableEmail.error.custom" resname="validator.disposableEmail.error.customListsOnly">
 				<source>For collaboration with business partners, we kindly ask you to use a business email address.</source>
 				<target>Für die Zusammenarbeit mit Geschäftspartnern bitten wir Sie, eine geschäftliche E-Mail-Adresse zu verwenden.</target>
 			</trans-unit>

@@ -16,20 +16,20 @@
 				<target>Einmal-E-Mail-Prüfung</target>
 			</trans-unit>
 			<trans-unit id="validator.disposableEmail.error.both" resname="validator.disposableEmail.error.both">
-				<source>For collaboration with business partners, we kindly ask you to use a business email address. Addresses from disposable or free providers cannot be considered.</source>
-				<target>Für die Zusammenarbeit mit Geschäftspartnern bitten wir Sie, eine geschäftliche E-Mail-Adresse zu verwenden. Einmal-E-Mail-Adressen oder Adressen von kostenlosen Anbietern können nicht berücksichtigt werden.</target>
+				<source>For collaboration with our business partners, we kindly ask you to use a business email address. Addresses from disposable or free providers cannot be considered.</source>
+				<target>Für die Zusammenarbeit mit unseren Geschäftspartnern bitten wir Sie, eine geschäftliche E-Mail-Adresse zu verwenden. Einmal-E-Mail-Adressen oder Adressen von kostenlosen Anbietern können nicht berücksichtigt werden.</target>
 			</trans-unit>
 			<trans-unit id="validator.disposableEmail.error.disposable" resname="validator.disposableEmail.error.disposable">
-				<source>For collaboration with business partners, we kindly ask you to not use addresses from disposable providers.</source>
-				<target>Für die Zusammenarbeit mit Geschäftspartnern bitten wir Sie, keine Einmal-E-Mail-Adresse zu verwenden.</target>
+				<source>For collaboration with our business partners, we kindly ask you not to use addresses from disposable providers.</source>
+				<target>Für die Zusammenarbeit mit unseren Geschäftspartnern bitten wir Sie, keine Einmal-E-Mail-Adresse zu verwenden.</target>
 			</trans-unit>
 			<trans-unit id="validator.disposableEmail.error.freemail" resname="validator.disposableEmail.error.freemail">
-				<source>For collaboration with business partners, we kindly ask you to not use addresses from disposable providers.</source>
-				<target>Für die Zusammenarbeit mit Geschäftspartnern bitten wir Sie, keine Einmal-E-Mail-Adresse zu verwenden.</target>
+				<source>For collaboration with our business partners, we kindly ask you not to use addresses from disposable providers.</source>
+				<target>Für die Zusammenarbeit mit unseren Geschäftspartnern bitten wir Sie, keine Einmal-E-Mail-Adresse zu verwenden.</target>
 			</trans-unit>
-			<trans-unit id="validator.disposableEmail.error.custom" resname="validator.disposableEmail.error.custom">
-				<source>For collaboration with business partners, we kindly ask you to use a business email address.</source>
-				<target>Für die Zusammenarbeit mit Geschäftspartnern bitten wir Sie, eine geschäftliche E-Mail-Adresse zu verwenden.</target>
+			<trans-unit id="validator.disposableEmail.error.custom" resname="validator.disposableEmail.error.customListsOnly">
+				<source>For collaboration with our business partners, we kindly ask you to use a business email address.</source>
+				<target>Für die Zusammenarbeit mit unseren Geschäftspartnern bitten wir Sie, eine geschäftliche E-Mail-Adresse zu verwenden.</target>
 			</trans-unit>
 
 			<trans-unit id="validator.existingFeUser.label" resname="validator.existingFeUser.label">
