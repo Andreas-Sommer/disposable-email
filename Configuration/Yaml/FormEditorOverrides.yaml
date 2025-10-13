@@ -1,0 +1,63 @@
+prototypes:
+  standard:
+    validatorsDefinition:
+      DisposableEmail:
+        implementationClassName: Belsignum\DisposableEmail\Form\Validator\DisposableEmailValidator
+        formEditor:
+          iconIdentifier: form-validator
+          label: 'LLL:EXT:disposable_email/Resources/Private/Language/locallang.xlf:validator.disposableEmail.label'
+      ExistingFeUser:
+        implementationClassName: Belsignum\DisposableEmail\Form\Validator\ExistingFeUserValidator
+        formEditor:
+          iconIdentifier: form-validator
+          label: 'LLL:EXT:disposable_email/Resources/Private/Language/locallang.xlf:validator.existingFeUser.label'
+          predefinedDefaults:
+            options:
+              feUsersPids: ''
+    formElementsDefinition:
+      Email:
+        formEditor:
+          editors:
+            900:
+              selectOptions:
+                200:
+                  label: 'validator.disposableEmail.label'
+                  value: 'DisposableEmail'
+                210:
+                  label: 'validator.existingFeUser.label'
+                  value: 'ExistingFeUser'
+          predefinedDefaults:
+            properties:
+              feUsersPids: ''
+          propertyCollections:
+            validators:
+              200:
+                identifier: 'DisposableEmail'
+                editors:
+                  100:
+                    identifier: 'header'
+                    templateName: 'Inspector-CollectionElementHeaderEditor'
+                    label: 'validator.disposableEmail.label'
+                  9999:
+                    identifier: 'removeButton'
+                    templateName: 'Inspector-RemoveElementEditor'
+              210:
+                identifier: 'ExistingFeUser'
+                editors:
+                  100:
+                    identifier: 'header'
+                    templateName: 'Inspector-CollectionElementHeaderEditor'
+                    label: 'validator.existingFeUser.label'
+                  200:
+                    additionalElementPropertyPaths:
+                      10: properties.fluidAdditionalAttributes.feUsersPids
+                    identifier: feUsersPids
+                    label: 'validator.existingFeUser.feUsersPids.label'
+                    propertyPath: options.feUsersPids
+                    templateName: Inspector-TextEditor
+                  9999:
+                    identifier: 'removeButton'
+                    templateName: 'Inspector-RemoveElementEditor'
+    formEditor:
+      translationFiles:
+        200: 'EXT:disposable_email/Resources/Private/Language/locallang.xlf'

@@ -6,6 +6,49 @@
 			<trans-unit id="validation.disposable_email.error">
 				<source>For collaboration with business partners, we kindly ask you to use a valid business email address. Addresses from disposable or free providers cannot be considered.</source>
 			</trans-unit>
+
+			<trans-unit id="validator.disposableEmail.label" resname="validator.disposableEmail.label">
+				<source>Reject disposable or free email providers</source>
+				<target>Wegwerf- oder Freemail-Adressen ablehnen</target>
+			</trans-unit>
+			<trans-unit id="validator.disposableEmail.header" resname="validator.disposableEmail.header">
+				<source>Disposable Email Check</source>
+				<target>Einmal-E-Mail-Prüfung</target>
+			</trans-unit>
+			<trans-unit id="validator.disposableEmail.error.both" resname="validator.disposableEmail.error.both">
+				<source>For collaboration with business partners, we kindly ask you to use a business email address. Addresses from disposable or free providers cannot be considered.</source>
+				<target>Für die Zusammenarbeit mit Geschäftspartnern bitten wir Sie, eine geschäftliche E-Mail-Adresse zu verwenden. Einmal-E-Mail-Adressen oder Adressen von kostenlosen Anbietern können nicht berücksichtigt werden.</target>
+			</trans-unit>
+			<trans-unit id="validator.disposableEmail.error.disposable" resname="validator.disposableEmail.error.disposable">
+				<source>For collaboration with business partners, we kindly ask you to not use addresses from disposable providers.</source>
+				<target>Für die Zusammenarbeit mit Geschäftspartnern bitten wir Sie, keine Einmal-E-Mail-Adresse zu verwenden.</target>
+			</trans-unit>
+			<trans-unit id="validator.disposableEmail.error.freemail" resname="validator.disposableEmail.error.freemail">
+				<source>For collaboration with business partners, we kindly ask you to not use addresses from disposable providers.</source>
+				<target>Für die Zusammenarbeit mit Geschäftspartnern bitten wir Sie, keine Einmal-E-Mail-Adresse zu verwenden.</target>
+			</trans-unit>
+			<trans-unit id="validator.disposableEmail.error.custom" resname="validator.disposableEmail.error.custom">
+				<source>For collaboration with business partners, we kindly ask you to use a business email address.</source>
+				<target>Für die Zusammenarbeit mit Geschäftspartnern bitten wir Sie, eine geschäftliche E-Mail-Adresse zu verwenden.</target>
+			</trans-unit>
+
+			<trans-unit id="validator.existingFeUser.label" resname="validator.existingFeUser.label">
+				<source>Check existing Frontend User</source>
+				<target>Prüfen auf vorhandenen Frontend User</target>
+			</trans-unit>
+			<trans-unit id="validator.existingFeUser.header" resname="validator.existingFeUser.header">
+				<source>Check existing Frontend User</source>
+				<target>Prüfen auf vorhandenen Frontend User</target>
+			</trans-unit>
+			<trans-unit id="validator.existingFeUser.error" resname="validator.existingFeUser.error">
+				<source>A user account already exists for this email address.</source>
+				<target>Zu dieser E-Mail-Adresse exisitert bereits ein Benutzerkonto.</target>
+			</trans-unit>
+
+			<trans-unit id="validator.existingFeUser.feUsersPids.label" resname="validator.existingFeUser.feUsersPids.label">
+				<source>Frontend Users Repository PID's (comma seperated)</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

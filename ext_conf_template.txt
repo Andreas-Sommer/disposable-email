@@ -1,5 +1,5 @@
 # cat=basic/enable/010; type=options[Disposal email provider=disposable,Free email provider=freemail,Disposable & free email provider=both,Custom lists only=customListsOnly]; label=Lists to use
-type = disposal
+type = disposable
 # cat=basic/enable/020; type=string; label=Custom Lists (comma seperated list of public uri)
 customLists =
 # cat=powermail/emailvalidation; type=boolean; label=Overload Email Validation, else adds additional validation rule
