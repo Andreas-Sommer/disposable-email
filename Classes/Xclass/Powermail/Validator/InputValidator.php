@@ -15,7 +15,7 @@ class InputValidator extends CoreInputValidator
 
     public function isValid($mail): void
     {
-        // load once DisposableEmailService via factory due to lack of DI
+        // load DisposableEmailService once via factory due to lack of DI
         $this->disposableEmailService = GeneralUtility::makeInstance(DisposableEmailServiceFactory::class)->get();
         parent::isValid($mail);
     }
