@@ -8,6 +8,7 @@ use Belsignum\DisposableEmail\Service\DisposableEmailService;
 use In2code\Powermail\Domain\Model\Field;
 use In2code\Powermail\Domain\Validator\InputValidator as CoreInputValidator;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
+use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
 class InputValidator extends CoreInputValidator
 {
@@ -35,12 +36,18 @@ class InputValidator extends CoreInputValidator
                 && $this->disposableEmailService->checkEmail($value) // is disposable mail
             )
             {
+                $languageCode = $this->typoscriptFrontendController()->getLanguage()->getLocale()->getLanguageCode();
                 // show disposable email error
                 $this->setErrorAndMessage(
                     $field,
-                    LocalizationUtility::translate('validation.disposable_email.error', 'disposable_email')
+                    LocalizationUtility::translate('validation.disposable_email.error', 'disposable_email', null, $languageCode)
                 );
             }
         }
+    }
+
+    protected function typoscriptFrontendController(): TypoScriptFrontendController
+    {
+        return $GLOBALS['TSFE'];
     }
 }
