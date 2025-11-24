@@ -2,7 +2,7 @@
 
 namespace Belsignum\DisposableEmail\Xclass\Powermail\Validator;
 
-use Belsignum\BsdAccmgr\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use Belsignum\DisposableEmail\Factory\DisposableEmailServiceFactory;
 use Belsignum\DisposableEmail\Service\DisposableEmailService;
 use In2code\Powermail\Domain\Model\Field;

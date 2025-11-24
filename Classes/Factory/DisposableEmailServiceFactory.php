@@ -3,7 +3,7 @@
 namespace Belsignum\DisposableEmail\Factory;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use Belsignum\BsdAccmgr\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use Belsignum\DisposableEmail\Service\DisposableEmailService;
 
 class DisposableEmailServiceFactory
