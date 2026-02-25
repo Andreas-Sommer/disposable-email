@@ -11,11 +11,18 @@
 namespace Belsignum\DisposableEmail\Form\Validator;
 
 use Belsignum\DisposableEmail\Factory\DisposableEmailServiceFactory;
+use Belsignum\DisposableEmail\Utility\ExtensionConfigurationUtility;
+use Belsignum\DisposableEmail\Utility\ListTypeConfiguration;
+use Belsignum\DisposableEmail\Utility\PowermailValidationUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator;
 
 class DisposableEmailValidator extends AbstractValidator
 {
+    protected $supportedOptions = [
+        'listType' => ['', 'Optional list type override (disable|disposable|freemail|both|customListsOnly)', 'string'],
+    ];
+
     /**
      * Validate the given value.
      *
@@ -29,16 +36,23 @@ class DisposableEmailValidator extends AbstractValidator
             return;
         }
 
+        $defaultListType = ExtensionConfigurationUtility::getListTypeFromExtensionConfiguration();
+        $listType = ListTypeConfiguration::resolveListTypeWithOptionalOverride(
+            $defaultListType,
+            (string)($this->options['listType'] ?? '')
+        );
+
+        if (ListTypeConfiguration::isValidationDisabled($listType)) {
+            return;
+        }
+
         $disposableEmailService = GeneralUtility::makeInstance(DisposableEmailServiceFactory::class)->get();
-        if ($disposableEmailService->checkEmail($value) === true) {
-            $type = (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-                \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
-            )->get('disposable_email')['type']);
-
-
+        if ($disposableEmailService->checkEmail($value, $listType) === true) {
             $this->addError(
-                $this->translateErrorMessage('validator.disposableEmail.error.' . $type, 'disposable_email')
-                ?: 'For collaboration with business partners, we kindly ask you to use a business email address. Addresses from disposable or free providers cannot be considered.',
+                $this->translateErrorMessage(
+                    PowermailValidationUtility::getCmsFormValidationErrorMessageKey($listType),
+                    'disposable_email'
+                ) ?: 'For collaboration with business partners, we kindly ask you to use a business email address. Addresses from disposable or free providers cannot be considered.',
                 170000791
             );
         }

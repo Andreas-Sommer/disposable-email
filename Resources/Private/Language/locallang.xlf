@@ -6,6 +6,18 @@
 			<trans-unit id="validation.disposable_email.error">
 				<source>For collaboration with business partners, we kindly ask you to use a valid business email address. Addresses from disposable or free providers cannot be considered.</source>
 			</trans-unit>
+			<trans-unit id="validation.disposable_email.error.disposable">
+				<source>For collaboration with business partners, we kindly ask you to use a valid business email address. Addresses from disposable providers cannot be considered.</source>
+			</trans-unit>
+			<trans-unit id="validation.disposable_email.error.freemail">
+				<source>For collaboration with business partners, we kindly ask you to use a valid business email address. Addresses from free email providers cannot be considered.</source>
+			</trans-unit>
+			<trans-unit id="validation.disposable_email.error.both">
+				<source>For collaboration with business partners, we kindly ask you to use a valid business email address. Addresses from disposable or free providers cannot be considered.</source>
+			</trans-unit>
+			<trans-unit id="validation.disposable_email.error.custom">
+				<source>For collaboration with business partners, we kindly ask you to use a valid business email address. Addresses from blocked providers cannot be considered.</source>
+			</trans-unit>
 
 			<trans-unit id="validator.disposableEmail.label" resname="validator.disposableEmail.label">
 				<source>Reject disposable or free email providers</source>
@@ -14,6 +26,10 @@
 			<trans-unit id="validator.disposableEmail.header" resname="validator.disposableEmail.header">
 				<source>Disposable Email Check</source>
 				<target>Einmal-E-Mail-Prüfung</target>
+			</trans-unit>
+			<trans-unit id="validator.disposableEmail.listType.label" resname="validator.disposableEmail.listType.label">
+				<source>Optional list type override (disable|disposable|freemail|both|customListsOnly)</source>
+				<target>Optionaler Listen-Typ-Override (disable|disposable|freemail|both|customListsOnly)</target>
 			</trans-unit>
 			<trans-unit id="validator.disposableEmail.error.both" resname="validator.disposableEmail.error.both">
 				<source>For collaboration with our business partners, we kindly ask you to use a business email address. Addresses from disposable or free providers cannot be considered.</source>
@@ -24,8 +40,8 @@
 				<target>Für die Zusammenarbeit mit unseren Geschäftspartnern bitten wir Sie, keine Einmal-E-Mail-Adresse zu verwenden.</target>
 			</trans-unit>
 			<trans-unit id="validator.disposableEmail.error.freemail" resname="validator.disposableEmail.error.freemail">
-				<source>For collaboration with our business partners, we kindly ask you not to use addresses from disposable providers.</source>
-				<target>Für die Zusammenarbeit mit unseren Geschäftspartnern bitten wir Sie, keine Einmal-E-Mail-Adresse zu verwenden.</target>
+				<source>For collaboration with our business partners, we kindly ask you not to use addresses from free email providers.</source>
+				<target>Für die Zusammenarbeit mit unseren Geschäftspartnern bitten wir Sie, keine Freemail-Adresse zu verwenden.</target>
 			</trans-unit>
 			<trans-unit id="validator.disposableEmail.error.custom" resname="validator.disposableEmail.error.customListsOnly">
 				<source>For collaboration with our business partners, we kindly ask you to use a business email address.</source>
