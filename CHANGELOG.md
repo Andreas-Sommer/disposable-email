@@ -2,7 +2,9 @@
 
 This changelog documents changes for `belsignum/disposable-email`.
 
-## Unreleased - 2026-02-25
+## Unreleased
+
+## 12.2.0 - 2026-02-25
 
 ### Ported from v10
 - Feature set from `10.1.0` (`372da51`):
