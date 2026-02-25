@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 10.1.0 - 2026-02-25
+
 ### Added
 - Powermail list type overrides via TypoScript:
   - `plugin.tx_powermail.settings.setup.tx_disposableemail.overrideExtensionSettings.type`
