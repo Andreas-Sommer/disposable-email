@@ -7,11 +7,21 @@ composer req belsignum/disposable-email
 ````
 
 ## Tests
-Run unit tests from extension directory:
+Run tests from extension directory:
 
 ````
 vendor/bin/phpunit -c Build/phpunit/UnitTests.xml
+vendor/bin/phpunit -c Build/phpunit/FunctionalTests.xml
 ````
+
+Alternatively via composer scripts:
+
+````
+composer test:unit
+composer test:functional
+````
+
+The CI workflow runs both test suites (`Unit` and `Functional`).
 
 ## Extension configuration options
 **basic.type - Lists to use**
@@ -21,7 +31,7 @@ vendor/bin/phpunit -c Build/phpunit/UnitTests.xml
 - Disposable & free email provider
 - Custom lists only
 
-**basic.customLists - Custom Lists (comma seperated list of public uri)**
+**basic.customLists - Custom Lists (comma separated list of public URIs)**
 Only absolute `https://` URLs are supported.
 
 **powermail.overloadEmailValidation - Overload Email Validation, else adds additional validation rule**
@@ -72,6 +82,9 @@ php vendor/bin/typo3 disposable-email:update
 ````
 
 ### Scheduler
-1. Add new Sceduler Task
+1. Add new Scheduler Task
 2. Choose Class "Execute console commands"
 3. Choose Schedulable Command "disposable-email:update: Updates the current list with the remote endpoint. updates are provided usually weekly."
+
+## Changelog
+See [CHANGELOG.md](./CHANGELOG.md).
