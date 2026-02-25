@@ -99,7 +99,7 @@ final class DisposableEmailValidatorTest extends TestCase
 
 final class TestableDisposableEmailValidator extends DisposableEmailValidator
 {
-    protected function translateErrorMessage(string $translateKey, string $extensionName, array $arguments = []): string
+    protected function translateErrorMessage(string $translateKey, string $extensionName = '', array $arguments = []): string
     {
         return $translateKey;
     }
