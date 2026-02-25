@@ -31,8 +31,8 @@
 		}
 	},
 	"scripts": {
-		"test:unit": "../../vendor/bin/phpunit -c Build/phpunit/UnitTests.xml",
-		"test:functional": "../../vendor/bin/phpunit -c Build/phpunit/FunctionalTests.xml"
+		"test:unit": "phpunit -c Build/phpunit/UnitTests.xml",
+		"test:functional": "phpunit -c Build/phpunit/FunctionalTests.xml"
 	},
 	"extra": {
 		"typo3/cms": {
