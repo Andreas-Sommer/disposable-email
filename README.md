@@ -6,6 +6,13 @@ A service extension to compile lists of disposable and free mail providers, offe
 composer req belsignum/disposable-email
 ````
 
+## Tests
+Run unit tests from extension directory:
+
+````
+../../vendor/bin/phpunit -c phpunit.xml.dist
+````
+
 ## Extension configuration options
 **basic.type - Lists to use**
 - Disable validation
