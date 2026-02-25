@@ -6,14 +6,24 @@ class ExtensionConfigurationUtility
 {
     public static function isOverloadEmailValidationActive(): bool
     {
-        $poermailLoaded = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('powermail');
-        $overloadEmailValidation = (bool)(\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-            \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
-        )->get('disposable_email')['overloadEmailValidation']);
+        $powermailLoaded = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('powermail');
+        $overloadEmailValidation = (bool)(self::getExtensionConfiguration()['overloadEmailValidation'] ?? false);
 
         return (
-            $poermailLoaded === true                // powermail loaded
+            $powermailLoaded === true               // powermail loaded
             && $overloadEmailValidation === true    // but overloadEmailValidation === true
         );
+    }
+
+    public static function getExtensionConfiguration(): array
+    {
+        return (array)\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+            \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
+        )->get('disposable_email');
+    }
+
+    public static function getListTypeFromExtensionConfiguration(): string
+    {
+        return ListTypeConfiguration::normalizeListType((string)(self::getExtensionConfiguration()['type'] ?? ''));
     }
 }

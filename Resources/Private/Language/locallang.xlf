@@ -6,6 +6,18 @@
 			<trans-unit id="validation.disposable_email.error">
 				<source>For collaboration with business partners, we kindly ask you to use a valid business email address. Addresses from disposable or free providers cannot be considered.</source>
 			</trans-unit>
+			<trans-unit id="validation.disposable_email.error.disposable">
+				<source>For collaboration with business partners, we kindly ask you to use a valid business email address. Addresses from disposable providers cannot be considered.</source>
+			</trans-unit>
+			<trans-unit id="validation.disposable_email.error.freemail">
+				<source>For collaboration with business partners, we kindly ask you to use a valid business email address. Addresses from free email providers cannot be considered.</source>
+			</trans-unit>
+			<trans-unit id="validation.disposable_email.error.both">
+				<source>For collaboration with business partners, we kindly ask you to use a valid business email address. Addresses from disposable or free providers cannot be considered.</source>
+			</trans-unit>
+			<trans-unit id="validation.disposable_email.error.custom">
+				<source>For collaboration with business partners, we kindly ask you to use a valid business email address. Addresses from blocked providers cannot be considered.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

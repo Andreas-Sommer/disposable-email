@@ -6,6 +6,18 @@
 			<trans-unit id="validation.disposable_email.error">
 				<target>Für die Zusammenarbeit mit Geschäftspartnern bitten wir Sie, eine valide geschäftliche E-Mail-Adresse zu verwenden. Adressen von Wegwerf- oder kostenlosen Anbietern können nicht berücksichtigt werden.</target>
 			</trans-unit>
+			<trans-unit id="validation.disposable_email.error.disposable">
+				<target>Für die Zusammenarbeit mit Geschäftspartnern bitten wir Sie, eine valide geschäftliche E-Mail-Adresse zu verwenden. Adressen von Wegwerf-Anbietern können nicht berücksichtigt werden.</target>
+			</trans-unit>
+			<trans-unit id="validation.disposable_email.error.freemail">
+				<target>Für die Zusammenarbeit mit Geschäftspartnern bitten wir Sie, eine valide geschäftliche E-Mail-Adresse zu verwenden. Adressen von kostenlosen E-Mail-Anbietern können nicht berücksichtigt werden.</target>
+			</trans-unit>
+			<trans-unit id="validation.disposable_email.error.both">
+				<target>Für die Zusammenarbeit mit Geschäftspartnern bitten wir Sie, eine valide geschäftliche E-Mail-Adresse zu verwenden. Adressen von Wegwerf- oder kostenlosen Anbietern können nicht berücksichtigt werden.</target>
+			</trans-unit>
+			<trans-unit id="validation.disposable_email.error.custom">
+				<target>Für die Zusammenarbeit mit Geschäftspartnern bitten wir Sie, eine valide geschäftliche E-Mail-Adresse zu verwenden. Adressen von gesperrten Anbietern können nicht berücksichtigt werden.</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

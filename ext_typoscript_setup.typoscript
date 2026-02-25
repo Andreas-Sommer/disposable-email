@@ -1,5 +1,15 @@
 plugin.tx_powermail {
 	settings.setup {
+    tx_disposableemail {
+      overrideExtensionSettings {
+        # disable | disposable | freemail | both | customListsOnly
+        type =
+        typeByForm {
+          # 123 = disable
+          # 456 = disposable
+        }
+      }
+    }
     validation {
       customValidation {
         791 = Belsignum\DisposableEmail\Validator\DisposableEmailValidator
