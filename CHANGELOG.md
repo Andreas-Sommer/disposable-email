@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 10.1.1 - 2026-02-25
+
 ### Fixed
 - Prevented scheduler import failures on duplicate `(domain, provider_type)` entries caused by edge-case domain normalization and DB collation behavior.
 
