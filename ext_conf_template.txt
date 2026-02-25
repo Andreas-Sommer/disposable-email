@@ -1,4 +1,4 @@
-# cat=basic/enable/010; type=options[Disposal email provider=disposable,Free email provider=freemail,Disposable & free email provider=both,Custom lists only=customListsOnly]; label=Lists to use
+# cat=basic/enable/010; type=options[Disable validation=disable,Disposable email provider=disposable,Free email provider=freemail,Disposable & free email provider=both,Custom lists only=customListsOnly]; label=Lists to use
 type = disposable
 # cat=basic/enable/020; type=string; label=Custom Lists (comma seperated list of public uri)
 customLists =

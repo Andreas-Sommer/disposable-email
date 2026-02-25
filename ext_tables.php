@@ -5,7 +5,10 @@ if (!defined('TYPO3'))
     die ('Access denied.');
 }
 
-if (\Belsignum\DisposableEmail\Utility\ExtensionConfigurationUtility::isOverloadEmailValidationActive() === false)
+if (
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('powermail')
+    && \Belsignum\DisposableEmail\Utility\ExtensionConfigurationUtility::isOverloadEmailValidationActive() === false
+)
 {
     // load individual validation rule
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(

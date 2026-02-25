@@ -6,6 +6,9 @@ prototypes:
         formEditor:
           iconIdentifier: form-validator
           label: 'LLL:EXT:disposable_email/Resources/Private/Language/locallang.xlf:validator.disposableEmail.label'
+          predefinedDefaults:
+            options:
+              listType: ''
       ExistingFeUser:
         implementationClassName: Belsignum\DisposableEmail\Form\Validator\ExistingFeUserValidator
         formEditor:
@@ -38,6 +41,11 @@ prototypes:
                     identifier: 'header'
                     templateName: 'Inspector-CollectionElementHeaderEditor'
                     label: 'validator.disposableEmail.label'
+                  200:
+                    identifier: listType
+                    label: 'validator.disposableEmail.listType.label'
+                    propertyPath: options.listType
+                    templateName: Inspector-TextEditor
                   9999:
                     identifier: 'removeButton'
                     templateName: 'Inspector-RemoveElementEditor'
