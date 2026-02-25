@@ -34,6 +34,11 @@
 		"test:unit": "phpunit -c Build/phpunit/UnitTests.xml",
 		"test:functional": "phpunit -c Build/phpunit/FunctionalTests.xml"
 	},
+	"config": {
+		"allow-plugins": {
+			"typo3/class-alias-loader": true
+		}
+	},
 	"extra": {
 		"typo3/cms": {
 			"extension-key": "disposable_email"
