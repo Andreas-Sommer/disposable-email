@@ -10,7 +10,7 @@ composer req belsignum/disposable-email
 Run unit tests from extension directory:
 
 ````
-../../vendor/bin/phpunit -c phpunit.xml.dist
+../../vendor/bin/phpunit -c Build/phpunit/UnitTests.xml
 ````
 
 ## Extension configuration options

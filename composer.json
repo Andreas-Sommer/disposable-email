@@ -16,10 +16,23 @@
 	],
 	"require": {
 	},
+	"require-dev": {
+		"phpunit/phpunit": "^10.5",
+		"typo3/testing-framework": "^8.0"
+	},
 	"autoload": {
 		"psr-4": {
 			"Belsignum\\DisposableEmail\\": "Classes/"
 		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Belsignum\\DisposableEmail\\Tests\\": "Tests/"
+		}
+	},
+	"scripts": {
+		"test:unit": "../../vendor/bin/phpunit -c Build/phpunit/UnitTests.xml",
+		"test:functional": "../../vendor/bin/phpunit -c Build/phpunit/FunctionalTests.xml"
 	},
 	"extra": {
 		"typo3/cms": {
