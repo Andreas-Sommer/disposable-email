@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace Belsignum\DisposableEmail\Command;
 
+use Belsignum\DisposableEmail\Utility\DomainNormalizationUtility;
 use Belsignum\DisposableEmail\Utility\ListTypeConfiguration;
+use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -98,17 +100,30 @@ class UpdateDisposableEmailProviderListCommand extends Command
             $domainsByProviderType[ListTypeConfiguration::PROVIDER_TYPE_CUSTOM] = $this->collectDomains($customLists);
         }
 
-        $formattedData = [];
+        $formattedDataByKey = [];
         foreach ($domainsByProviderType as $providerType => $domains)
         {
-            foreach ($this->deduplicateDomains($domains) as $domain)
+            foreach ($domains as $domain)
             {
-                $formattedData[] = [
-                    self::FIELD_NAME => $domain,
+                $normalizedDomain = DomainNormalizationUtility::normalizeDomain((string)$domain);
+                if ($normalizedDomain === '')
+                {
+                    continue;
+                }
+
+                $deduplicationKey = $providerType . ':' . $normalizedDomain;
+                if (isset($formattedDataByKey[$deduplicationKey]))
+                {
+                    continue;
+                }
+
+                $formattedDataByKey[$deduplicationKey] = [
+                    self::FIELD_NAME => $normalizedDomain,
                     self::FIELD_PROVIDER_TYPE => $providerType,
                 ];
             }
         }
+        $formattedData = array_values($formattedDataByKey);
 
         // truncate table
         $connection = $this->connectionPool->getConnectionForTable(self::TABLE_NAME);
@@ -117,12 +132,7 @@ class UpdateDisposableEmailProviderListCommand extends Command
         $chunks = array_chunk($formattedData, 10000);
         foreach ($chunks as $chunk)
         {
-            $connection->bulkInsert(
-                self::TABLE_NAME,
-                $chunk,
-                [self::FIELD_NAME, self::FIELD_PROVIDER_TYPE],
-                [Connection::PARAM_STR, Connection::PARAM_STR]
-            );
+            $this->insertChunkSafely($connection, $chunk);
         }
         return Command::SUCCESS;
     }
@@ -138,9 +148,37 @@ class UpdateDisposableEmailProviderListCommand extends Command
         return $domains;
     }
 
-    protected function deduplicateDomains(array $domains): array
+    protected function insertChunkSafely(Connection $connection, array $chunk): void
     {
-        return array_flip(array_flip($domains)); // array_flip is more performant than array_unique
+        try
+        {
+            $connection->bulkInsert(
+                self::TABLE_NAME,
+                $chunk,
+                [self::FIELD_NAME, self::FIELD_PROVIDER_TYPE],
+                [Connection::PARAM_STR, Connection::PARAM_STR]
+            );
+            return;
+        }
+        catch (UniqueConstraintViolationException $exception)
+        {
+            // Fallback: deduplication follows normalized values, but DB collation can still collapse edge cases.
+            foreach ($chunk as $row)
+            {
+                try
+                {
+                    $connection->insert(
+                        self::TABLE_NAME,
+                        $row,
+                        [Connection::PARAM_STR, Connection::PARAM_STR]
+                    );
+                }
+                catch (UniqueConstraintViolationException $innerException)
+                {
+                    continue;
+                }
+            }
+        }
     }
 
     protected function getList(string $endpoint): array

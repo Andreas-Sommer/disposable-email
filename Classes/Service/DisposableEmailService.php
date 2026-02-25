@@ -2,6 +2,7 @@
 
 namespace Belsignum\DisposableEmail\Service;
 
+use Belsignum\DisposableEmail\Utility\DomainNormalizationUtility;
 use Belsignum\DisposableEmail\Utility\ExtensionConfigurationUtility;
 use Belsignum\DisposableEmail\Utility\ListTypeConfiguration;
 use TYPO3\CMS\Core\Database\Connection;
@@ -38,6 +39,12 @@ class DisposableEmailService
 
     public function checkDomain(string $domain, ?string $listType = null): bool
     {
+        $normalizedDomain = DomainNormalizationUtility::normalizeDomain($domain);
+        if ($normalizedDomain === '')
+        {
+            return false;
+        }
+
         $effectiveListType = $listType ?? ExtensionConfigurationUtility::getListTypeFromExtensionConfiguration();
         $providerTypes = ListTypeConfiguration::getProviderTypesByListType($effectiveListType);
         if ($providerTypes === [])
@@ -53,7 +60,7 @@ class DisposableEmailService
             ->where(
                 $queryBuilder->expr()->eq(
                     'domain',
-                    $queryBuilder->createNamedParameter($domain)
+                    $queryBuilder->createNamedParameter($normalizedDomain)
                 )
             )
             ->andWhere(
